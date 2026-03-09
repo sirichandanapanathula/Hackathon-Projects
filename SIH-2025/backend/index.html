@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportAI - Democratizing Sports Talent Assessment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #4F46E5 0%, #10B981 100%);
+        }
+        .test-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+        }
+        #analysis-animation {
+            animation: pulse-loader 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-loader {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i data-feather="activity" class="text-indigo-600 w-8 h-8"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-900">SportAI</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#features" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Features</a>
+                    <a href="#how-it-works" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium">How It Works</a>
+                    <a href="#tests" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Tests</a>
+                    <a href="#contact" class="text-gray-900 hover:text-indigo-600 px-3 py-2 text-sm font-medium">Contact</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="#" class="bg-indigo-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-indigo-700">Download App</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Democratizing Sports Talent Assessment</h1>
+                    <p class="text-xl mb-8 text-indigo-100">AI-powered mobile platform for fair, accessible and scientific evaluation of athletic potential across India.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white text-indigo-600 px-6 py-3 rounded-md text-sm font-medium hover:bg-gray-100">Download Now</a>
+                        <a href="#how-it-works" class="border border-white text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-white hover:text-indigo-600">Learn More</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="absolute -top-6 -left-6 w-64 h-64 bg-indigo-400 rounded-full opacity-20"></div>
+                        <div class="absolute -bottom-6 -right-6 w-64 h-64 bg-emerald-400 rounded-full opacity-20"></div>
+                        <img src="https://cdn.pixabay.com/photo/2017/01/25/12/31/iphone-2008067_1280.png" class="relative z-10 w-80" alt="SportAI Mobile App">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">10K+</div>
+                    <div class="text-gray-600">Athletes Assessed</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">100%</div>
+                    <div class="text-gray-600">AI Verification</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">30+</div>
+                    <div class="text-gray-600">Sports Disciplines</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">28</div>
+                    <div class="text-gray-600">States Covered</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="features" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Innovative Features</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Cutting-edge technology to ensure fair and accurate talent assessment</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon bg-indigo-50 text-indigo-600 mb-6">
+                        <i data-feather="shield" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI Cheat Detection</h3>
+                    <p class="text-gray-600">Advanced algorithms detect anomalies or manipulations in test videos to ensure fair assessments.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon bg-emerald-50 text-emerald-600 mb-6">
+                        <i data-feather="wifi-off" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Offline Analysis</h3>
+                    <p class="text-gray-600">Perform preliminary performance analysis directly on device without needing internet connectivity.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon bg-amber-50 text-amber-600 mb-6">
+                        <i data-feather="award" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Performance Benchmarking</h3>
+                    <p class="text-gray-600">Compare athlete performance against age/gender benchmarks with instant feedback.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon bg-purple-50 text-purple-600 mb-6">
+                        <i data-feather="star" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Gamified Interface</h3>
+                    <p class="text-gray-600">Progress badges, leaderboards and interactive visuals engage athletes and encourage participation.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon bg-blue-50 text-blue-600 mb-6">
+                        <i data-feather="film" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Auto-Test Segmentation</h3>
+                    <p class="text-gray-600">Automatically detect and segment performance clips to reduce manual effort in analysis.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon bg-red-50 text-red-600 mb-6">
+                        <i data-feather="lock" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Secure Data Transmission</h3>
+                    <p class="text-gray-600">Encrypted submission of verified data to SAI servers for evaluation and athlete profiling.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="how-it-works" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Simple steps to assess your athletic potential</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-indigo-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="bg-indigo-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="text-xl font-bold">1</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Download App</h3>
+                    <p class="text-gray-600">Available on Android and iOS devices</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-indigo-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="bg-indigo-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="text-xl font-bold">2</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Record Test</h3>
+                    <p class="text-gray-600">Follow instructions to record your performance</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-indigo-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="bg-indigo-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="text-xl font-bold">3</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">AI Analysis</h3>
+                    <p class="text-gray-600">On-device AI verifies and analyzes your performance</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-indigo-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div class="bg-indigo-600 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <span class="text-xl font-bold">4</span>
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-medium text-gray-900 mb-2">Get Results</h3>
+                    <p class="text-gray-600">Receive instant feedback and benchmark comparisons</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="tests" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Standard Fitness Assessment Tests</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Scientific methods to evaluate athletic potential</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-start md:space-x-8">
+                <div class="w-full md:w-1/2 bg-white rounded-xl shadow-sm p-8 mb-8 md:mb-0" data-aos="fade-right">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Vertical Jump Test</h3>
+                    <p class="text-gray-600 mb-4">Measures explosive leg power and lower body strength. Record your jump and let our AI handle the rest.</p>
+                    
+                    <div id="test-status" class="mb-6 flex items-center space-x-2">
+                        <i id="status-icon" data-feather="play-circle" class="text-indigo-600 w-6 h-6"></i>
+                        <span id="status-text" class="font-medium text-indigo-600">Ready to start</span>
+                    </div>
+
+                    <div id="test-controls" class="flex items-center space-x-4">
+                        <input type="file" id="video-input" accept="video/*" class="hidden">
+                        <button id="record-button" class="bg-indigo-600 text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-indigo-700 transition flex items-center">
+                            <i data-feather="film" class="w-4 h-4 mr-2"></i> Record Video
+                        </button>
+                    </div>
+
+                    <div id="analysis-preview" class="hidden mt-8">
+                        <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-gray-900 flex items-center justify-center">
+                            <video id="video-preview" class="w-full h-full object-contain" controls></video>
+                            <canvas id="pose-canvas" class="absolute inset-0 w-full h-full"></canvas>
+                        </div>
+                    </div>
+
+                    <div id="results-display" class="hidden mt-8 bg-gray-50 p-6 rounded-lg border border-gray-200">
+                        <h4 class="text-lg font-bold text-gray-900 mb-2">Your Results</h4>
+                        <div class="text-gray-600">
+                            <p><strong>Jump Height:</strong> <span id="jump-height-result" class="font-bold text-indigo-600"></span></p>
+                            <p><strong>Power Score:</strong> <span id="power-score-result" class="font-bold text-indigo-600"></span></p>
+                            <p><strong>AI Verdict:</strong> <span id="verdict-result" class="font-bold text-indigo-600"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 bg-white rounded-xl shadow-sm p-8" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">My Progress Report</h3>
+                    <div id="progress-stats" class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="bg-indigo-50 p-4 rounded-lg text-center">
+                            <p class="text-sm text-gray-600">Best Jump</p>
+                            <p id="best-jump" class="text-2xl font-bold text-indigo-600 mt-1">--</p>
+                        </div>
+                        <div class="bg-emerald-50 p-4 rounded-lg text-center">
+                            <p class="text-sm text-gray-600">Average Jump</p>
+                            <p id="avg-jump" class="text-2xl font-bold text-emerald-600 mt-1">--</p>
+                        </div>
+                    </div>
+                    
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">Jump History</h4>
+                    <ul id="jump-history-list" class="space-y-4">
+                        </ul>
+                    <p id="no-history-message" class="text-gray-500 text-center mt-4">No jump history yet. Record your first test!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm test-card transition-all" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-emerald-100 flex items-center justify-center">
+                        <i data-feather="repeat" class="w-16 h-16 text-emerald-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Shuttle Run</h3>
+                        <p class="text-gray-600 mb-4">Assesses speed, agility and anaerobic capacity.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i data-feather="clock" class="w-4 h-4 mr-1"></i>
+                            <span>Timed test</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm test-card transition-all" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-amber-100 flex items-center justify-center">
+                        <i data-feather="activity" class="w-16 h-16 text-amber-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Sit-ups</h3>
+                        <p class="text-gray-600 mb-4">Evaluates core strength and endurance.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i data-feather="clock" class="w-4 h-4 mr-1"></i>
+                            <span>Repetition count</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-sm test-card transition-all" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i data-feather="trending-up" class="w-16 h-16 text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Endurance Runs</h3>
+                        <p class="text-gray-600 mb-4">Tests cardiovascular fitness and stamina.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i data-feather="clock" class="w-4 h-4 mr-1"></i>
+                            <span>Distance/time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg-indigo-700 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Ready to Discover Your Athletic Potential?</h2>
+            <p class="text-xl text-indigo-100 mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Join thousands of athletes across India in the most advanced talent assessment platform.</p>
+            <div class="flex justify-center space-x-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="#" class="bg-white text-indigo-600 px-6 py-3 rounded-md text-sm font-medium hover:bg-gray-100 flex items-center">
+                    <i data-feather="download" class="w-4 h-4 mr-2"></i>
+                    Download Now
+                </a>
+                <a href="#" class="border border-white text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-white hover:text-indigo-600 flex items-center">
+                    <i data-feather="info" class="w-4 h-4 mr-2"></i>
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact" class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i data-feather="activity" class="text-indigo-400 w-6 h-6"></i>
+                        <span class="ml-2 text-xl font-bold">SportAI</span>
+                    </div>
+                    <p class="text-gray-400">AI-powered mobile platform for democratizing sports talent assessment across India.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-white">How It Works</a></li>
+                        <li><a href="#tests" class="text-gray-400 hover:text-white">Tests</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center text-gray-400">
+                            <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                            contact@sportai.gov.in
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i data-feather="phone" class="w-4 h-4 mr-2"></i>
+                            +91 9876543210
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i data-feather="map-pin" class="w-4 h-4 mr-2"></i>
+                            Sports Authority of India, New Delhi
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Download App</h3>
+                    <div class="space-y-4">
+                        <a href="#" class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-3 rounded-md flex items-center">
+                            <i data-feather="apple" class="w-5 h-5 mr-2"></i>
+                            <div class="text-left">
+                                <div class="text-xs">Download on the</div>
+                                <div class="font-medium">App Store</div>
+                            </div>
+                        </a>
+                        <a href="#" class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-3 rounded-md flex items-center">
+                            <i data-feather="play" class="w-5 h-5 mr-2"></i>
+                            <div class="text-left">
+                                <div class="text-xs">Get it on</div>
+                                <div class="font-medium">Google Play</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2023 SportAI. A Sports Authority of India initiative. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init();
+        feather.replace();
+
+        // ** JavaScript for Vertical Jump Test **
+        const recordButton = document.getElementById('record-button');
+        const videoInput = document.getElementById('video-input');
+        const statusText = document.getElementById('status-text');
+        const statusIcon = document.getElementById('status-icon');
+        const resultsDisplay = document.getElementById('results-display');
+        const jumpHeightResult = document.getElementById('jump-height-result');
+        const powerScoreResult = document.getElementById('power-score-result');
+        const verdictResult = document.getElementById('verdict-result');
+        const jumpHistoryList = document.getElementById('jump-history-list');
+        const noHistoryMessage = document.getElementById('no-history-message');
+        const bestJumpElement = document.getElementById('best-jump');
+        const avgJumpElement = document.getElementById('avg-jump');
+        const analysisPreview = document.getElementById('analysis-preview');
+        const videoPreview = document.getElementById('video-preview');
+        const poseCanvas = document.getElementById('pose-canvas');
+
+        const VERDICTS = ["Excellent Potential", "Good Form", "Needs Improvement"];
+
+        recordButton.addEventListener('click', () => {
+            videoInput.click();
+        });
+
+        videoInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                simulateAnalysis(file);
+            }
+        });
+
+        function simulateAnalysis(file) {
+            // Hide previous results and show preview
+            resultsDisplay.classList.add('hidden');
+            analysisPreview.classList.remove('hidden');
+
+            // Set video source
+            videoPreview.src = URL.createObjectURL(file);
+            videoPreview.load();
+            videoPreview.play();
+
+            // Update UI to show analysis is in progress
+            setStatus('Analyzing...', 'loader', 'text-amber-600');
+            recordButton.disabled = true;
+
+            // Simulate MediaPipe Pose analysis
+            const videoDuration = 5000; // Simulate a 5-second video analysis
+            let startTime = null;
+            function animatePose(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = timestamp - startTime;
+                
+                // Clear canvas
+                const ctx = poseCanvas.getContext('2d');
+                ctx.clearRect(0, 0, poseCanvas.width, poseCanvas.height);
+                
+                // Draw simulated pose on the canvas
+                if (progress < videoDuration) {
+                    const normalizedProgress = progress / videoDuration;
+                    drawSimulatedPose(ctx, normalizedProgress);
+                    requestAnimationFrame(animatePose);
+                } else {
+                    // Analysis complete, stop animation
+                    videoPreview.pause();
+                    ctx.clearRect(0, 0, poseCanvas.width, poseCanvas.height); // Clear final pose
+                    
+                    // Generate simulated results
+                    const jumpHeight = (Math.random() * (0.8 - 0.4) + 0.4).toFixed(2);
+                    const powerScore = (Math.random() * (90 - 70) + 70).toFixed(0);
+                    const verdict = VERDICTS[Math.floor(Math.random() * VERDICTS.length)];
+
+                    // Update UI with results
+                    jumpHeightResult.textContent = jumpHeight + " m";
+                    powerScoreResult.textContent = powerScore + " / 100";
+                    verdictResult.textContent = verdict;
+                    resultsDisplay.classList.remove('hidden');
+
+                    // Update status and re-enable button
+                    setStatus('Analysis Complete', 'check-circle', 'text-emerald-600');
+                    recordButton.disabled = false;
+                    
+                    // Save and display new result in history
+                    saveResult({
+                        date: new Date().toLocaleDateString(),
+                        height: parseFloat(jumpHeight)
+                    });
+                }
+            }
+            requestAnimationFrame(animatePose);
+        }
+
+        // Simulates the keypoints that MediaPipe Pose would generate
+        function drawSimulatedPose(ctx, progress) {
+            const width = poseCanvas.width;
+            const height = poseCanvas.height;
+            const centerX = width / 2;
+            const centerY = height / 2;
+
+            // Simulated keypoints based on jump animation
+            let keypoints = [];
+            const jumpPhase = Math.sin(progress * Math.PI * 2); // -1 to 1 for a jump
+            const scale = 0.5 + Math.abs(jumpPhase) * 0.2; // Body scales up slightly
+
+            const headY = centerY - 100 * scale;
+            const shouldersY = headY + 50 * scale;
+            const hipsY = shouldersY + 120 * scale;
+            const kneesY = hipsY + 80 * scale + (jumpPhase > 0 ? jumpPhase * 50 : 0); // Knees bend more on landing/takeoff
+            const anklesY = kneesY + 60 * scale;
+
+            keypoints.push({x: centerX, y: headY}); // Head
+            keypoints.push({x: centerX - 30, y: shouldersY}); // Left Shoulder
+            keypoints.push({x: centerX + 30, y: shouldersY}); // Right Shoulder
+            keypoints.push({x: centerX - 20, y: hipsY}); // Left Hip
+            keypoints.push({x: centerX + 20, y: hipsY}); // Right Hip
+            keypoints.push({x: centerX - 25, y: kneesY}); // Left Knee
+            keypoints.push({x: centerX + 25, y: kneesY}); // Right Knee
+            keypoints.push({x: centerX - 20, y: anklesY}); // Left Ankle
+            keypoints.push({x: centerX + 20, y: anklesY}); // Right Ankle
+
+            // Draw skeleton lines
+            ctx.strokeStyle = '#00ffc8';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            // Torso
+            ctx.moveTo(keypoints[1].x, keypoints[1].y); ctx.lineTo(keypoints[2].x, keypoints[2].y);
+            ctx.moveTo(keypoints[1].x, keypoints[1].y); ctx.lineTo(keypoints[3].x, keypoints[3].y);
+            ctx.moveTo(keypoints[2].x, keypoints[2].y); ctx.lineTo(keypoints[4].x, keypoints[4].y);
+            ctx.moveTo(keypoints[3].x, keypoints[3].y); ctx.lineTo(keypoints[4].x, keypoints[4].y);
+            // Legs
+            ctx.moveTo(keypoints[3].x, keypoints[3].y); ctx.lineTo(keypoints[5].x, keypoints[5].y);
+            ctx.moveTo(keypoints[4].x, keypoints[4].y); ctx.lineTo(keypoints[6].x, keypoints[6].y);
+            ctx.moveTo(keypoints[5].x, keypoints[5].y); ctx.lineTo(keypoints[7].x, keypoints[7].y);
+            ctx.moveTo(keypoints[6].x, keypoints[6].y); ctx.lineTo(keypoints[8].x, keypoints[8].y);
+            ctx.stroke();
+
+            // Draw keypoints
+            ctx.fillStyle = '#ff6347';
+            keypoints.forEach(point => {
+                ctx.beginPath();
+                ctx.arc(point.x, point.y, 5, 0, 2 * Math.PI);
+                ctx.fill();
+            });
+        }
+
+        function setStatus(text, icon, colorClass) {
+            statusText.textContent = text;
+            statusIcon.setAttribute('data-feather', icon);
+            statusIcon.className = colorClass + ' w-6 h-6';
+            feather.replace();
+        }
+
+        function getHistory() {
+            const history = localStorage.getItem('jumpHistory');
+            return history ? JSON.parse(history) : [];
+        }
+
+        function saveResult(result) {
+            const history = getHistory();
+            history.push(result);
+            localStorage.setItem('jumpHistory', JSON.stringify(history));
+            renderHistory();
+        }
+
+        function renderHistory() {
+            const history = getHistory();
+            jumpHistoryList.innerHTML = '';
+            
+            if (history.length === 0) {
+                noHistoryMessage.classList.remove('hidden');
+                bestJumpElement.textContent = '--';
+                avgJumpElement.textContent = '--';
+                return;
+            }
+
+            noHistoryMessage.classList.add('hidden');
+
+            const jumpHeights = history.map(item => item.height);
+            const bestJump = Math.max(...jumpHeights);
+            const totalHeight = jumpHeights.reduce((sum, height) => sum + height, 0);
+            const avgJump = (totalHeight / jumpHeights.length).toFixed(2);
+            
+            bestJumpElement.textContent = bestJump + " m";
+            avgJumpElement.textContent = avgJump + " m";
+
+            history.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.className = 'flex justify-between items-center bg-gray-100 p-3 rounded-lg';
+                li.innerHTML = `
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm text-gray-500">${item.date}</span>
+                        <span class="font-bold text-gray-900">${item.height.toFixed(2)} m</span>
+                    </div>
+                    <span class="text-sm text-indigo-600 font-medium">Test #${index + 1}</span>
+                `;
+                jumpHistoryList.appendChild(li);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderHistory();
+        });
+    </script>
+</body>
+</html>
