@@ -1,0 +1,60 @@
+/* Sign-Up Page Styling */
+.signup-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 360px;
+}
+
+/* Center the form */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('background.jpg') no-repeat center center/cover;
+}
+
+/* Form fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.back{
+    font-size: 20px;
+}
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+/* Links */
+p a {
+    text-decoration: none;
+    color: #096ad1;
+}
+
+p a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telemedicine - Home</title>
+    <link rel="stylesheet" href="stylegds.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="/Images/logo.png" alt="Telemedicine Logo" class="logo">
+        <ul>
+            <li><a href="register.html">Register Patient</a></li>
+            <li><a href="#">View Patient</a></li>
+            <li><a href="#">Update Patient Info</a></li>
+            <li><a href="getmedicine.html">Get Medicine for Disease</a></li>
+            <li><a href="logsig.html">Back</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <h1>Welcome to Telemedicine!</h1>
+        <p>Your health, your way. Consult doctors, get medicine suggestions, and track your records.</p>
+        <button class="cta-button">AI as a Medical Assistant, Not a Decision-Maker</button>
+    </header>
+
+    <nav class="navbar">
+        <a href="#about"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="#records"><i class="fas fa-file-medical"></i> Medical Records</a>
+        <a href="#medicine-section"><i class="fas fa-pills"></i> Medicine Suggestions</a>
+    </nav>
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>We are a dedicated telemedicine platform providing AI-powered health assistance. Our goal is to make healthcare accessible, efficient, and secure for everyone.</p>
+        <img src="/Images/Screenshot 2025-03-19 180241.png" alt="Healthcare Assistance" class="about-img">
+    </section>
+
+    <section class="secure-section">
+        <h2>🔒 Secure & HIPAA-Compliant</h2>
+        <p>We ensure the highest security for your medical data, following HIPAA privacy regulations.</p>
+    </section>
+
+    <section id="medicine-section" class="medicine-section">
+        <h2>Get Medicine for Disease</h2>
+        <input type="text" id="searchBox" placeholder="Enter disease name:" onkeydown="showMedicines(event)">
+        <button class="search-button" onclick="searchMedicine()">Search</button>
+        <div id="medicine-output" class="medicine-output"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Telemedicine Platform | All Rights Reserved | Your Health, Our Priority</p>
+    </footer>
+</body>
+</html>

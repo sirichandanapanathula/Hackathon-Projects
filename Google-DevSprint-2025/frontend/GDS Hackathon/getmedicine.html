@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Medicine for Disease</title>
+    <link rel="stylesheet" href="stylegds.css">
+</head>
+<body>
+
+    <div class="container1">
+        <h1>Get Medicine for Disease</h1>
+        <p>Enter a disease name to get recommended medicines.</p>
+        
+        <input type="text" id="searchBox" placeholder="Enter disease name..." onkeydown="handleEnter(event)">
+        <button class="search-button" onclick="searchMedicine()">Search</button>
+
+        <div id="medicine-output" class="medicine-output"></div>
+    </div>
+
+    <script src="gds.js"></script>
+</body>
+</html>
