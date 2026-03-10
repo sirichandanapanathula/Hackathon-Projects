@@ -1,0 +1,11 @@
+Neuro-Haptic Surgical Glove
+ECS Project
+
+A bidirectional haptic feedback system designed to restore tactile feedback in minimally invasive surgery.
+
+Tech Used:
+Arduino Nano
+Flex Sensors
+FSR Sensor
+Vibration Motors
+unity 3D
